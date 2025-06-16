@@ -1,0 +1,312 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Dosis', sans-serif;
+}
+
+
+
+/* Navigation tổng */
+.navigation {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 6px 15px rgba(84, 129, 13, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Smart Sticky Header */
+.navigation {
+  transition: top 0.3s ease;
+}
+
+/* Khi scroll xuống, ẩn header bằng cách kéo lên trên */
+.navigation.hide {
+  top: -100px; /* Ẩn ra ngoài màn hình */
+}
+
+
+/* Khung chứa các mục */
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0 40px;
+  position: relative;
+}
+
+/* Menu trái/phải */
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+/* Các mục menu */
+.list a {   /* Chữ các mục icon trừ đăng nhập*/
+  text-decoration: none;
+  font-weight: bold; 
+  font-size: 15px;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 8px;
+  transition: 0.3s;
+}
+
+.list a:hover,
+.list.active a {
+  color: #54794a;
+}
+
+/* Bọc hiệu ứng vào toàn bộ thẻ <a> bên trong mục right-action đang active */
+.list.right-action.active a {
+  position: relative;
+  z-index: 1;
+  color: white; /* Chữ và icon chuyển trắng */
+  padding: 10px 8px;
+}
+
+/* Tạo vòng tròn xanh phủ toàn bộ .icon + .text */
+.list.right-action.active a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;     
+  height: 80px;
+  background: #54794a;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: 0.3s ease;
+
+  
+  /*  Thêm bóng mượt */
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.list.right-action.active a:hover::before {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+.icon {
+  font-size: 20px;
+}
+
+
+.text {   /* Chữ icon đăng nhập */
+  font-weight: bold; 
+  font-size: 15px;
+  margin-top: 4px;
+}
+
+/* Ảnh logo */
+.nav-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-logo img {
+  height: 85px;
+  object-fit: contain;
+}
+
+/* Thanh chỉ mục màu xanh */
+.indicator {
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  width: 60px;
+  background: #54794a;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  left: 0; /* mặc định */
+}
+
+/* Tạo cửa sỗ phần đăng nhập đăng ký */
+/* Dropdown đăng nhập */
+.login-dropdown {
+  position: absolute;
+  top: 100px; /* Hiện bên dưới thanh nav */
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: none;
+  flex-direction: column;
+  min-width: 150px;
+  z-index: 1001;
+}
+
+/* Hiện dropdown khi hover vào .right-action */
+.list.right-action:hover .login-dropdown {
+  display: flex;
+}
+
+.login-dropdown a {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #444;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.login-dropdown a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Bọc phần trigger đăng nhập (icon + chữ) */
+.login-trigger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 8px;
+  color: #444;
+  transition: 0.3s;
+}
+
+.login-trigger:hover {
+  color: #54794a;
+}
+
+/* LOGIN CONTAINER */
+.login-container {
+  position: relative;
+}
+
+/* KHU VỰC ICON */
+.login-trigger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 8px;
+  color: #444;
+  transition: 0.3s;
+}
+
+.login-trigger:hover {
+  color: #54794a;
+}
+
+/* DROPDOWN */
+.login-dropdown {
+  position: absolute;
+  top: 100%;
+  margin-top: 20px; /* cách icon **px */
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  z-index: 1001;
+
+  /* Hiệu ứng ẩn/hiện */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Liên kết trong dropdown */
+.login-dropdown a {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #444;
+  font-size: 14px;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 6px;
+}
+
+.login-dropdown a:hover {
+  background-color: #54794a;
+  color: white;
+}
+
+/* Lớp active để điều khiển bằng JS */
+.login-container.active .login-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ==== FOOTER ==== */
+.site-footer {
+  background-color: #f3f3f3;
+  padding: 40px 20px 20px;
+  font-size: 14px;
+  color: #444;
+  margin-top: 100px;
+  border-top: 2px solid #ccc;
+  bottom: 0%;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #54794a;
+}
+
+.footer-column p,
+.footer-column li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column a {
+  color: #444;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column a:hover {
+  color: #54794a;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 12px;
+  font-size: 22px;
+  color: #444;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #54794a;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0 0;
+  font-size: 13px;
+  color: #777;
+  border-top: 1px solid #ddd;
+  margin-top: 30px;
+}

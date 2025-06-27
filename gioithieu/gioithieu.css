@@ -1,0 +1,288 @@
+/* .gioi-thieu-container {
+  padding-top: 120px;
+  max-width: 1000px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #333;
+}
+
+.gioi-thieu-container h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #54794a;
+}
+
+.gioi-thieu-container h2 {
+  font-size: 24px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #cbd38a;
+}
+
+.gioi-thieu-container p, 
+.gioi-thieu-container li {
+  font-size: 16px;
+}
+
+.gioi-thieu-container ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+
+ .gioi-thieu-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 120px;
+  font-family: sans-serif;
+  color: #333;
+}
+
+.gioi-thieu-box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.gioi-thieu-box h2 {
+  color: #6a8f53;
+  margin-bottom: 10px;
+}
+
+.iframe-gioithieu {
+  width: 100%;
+  height: 150px;
+  border: none;
+} */
+
+
+.page-header {
+  text-align: center;
+  margin-bottom: 30px; 
+  margin-top: 120px;
+
+}
+
+.page-header h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #54794a;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: #777;
+}
+
+.breadcrumb a {
+  color: #554932;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* .about-section {
+  background-color: #f7f7f7;
+  padding: 60px 20px;
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #333;
+}
+ */
+
+
+.about-section {
+  position: relative;
+  background-image: url('https://cdn.shopify.com/s/files/1/1980/2143/files/revival-fishbowl-terrarium-lulu-and-angel8_large.jpg?v=1494561951');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  z-index: 1;
+  color: #fff;
+}
+
+.about-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* lớp mờ phủ lên ảnh */
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+.about-content h2 {
+  font-size: 28px;
+  margin-bottom: 24px;
+  text-align: center;
+  color:#cbd38a;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.about-content p {
+  font-size: 16px;
+  margin-bottom: 18px;
+  text-align: justify;
+  color: #e7f8e7;
+}
+.intro-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.intro-text {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+
+
+.intro-boxes {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.intro-box {
+  flex: 1 1 300px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.intro-box h2 a {
+  text-decoration: none;
+  color: #cbd38a;
+}
+
+.intro-box h2 a:hover {
+  text-decoration: underline;
+}
+
+
+/* .blur-background {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blur-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/1.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  padding: 60px 30px;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 2;
+} */
+.intro-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.blur-background {
+  position: relative;
+  flex: 1 1 45%;
+  height: 250px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blur-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+.blur-text {
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+  padding: 20px;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+}
+
+.blur-link {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+.blur-background::after{
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: -75%; 
+    width: 50%; 
+    height: 100%; 
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.3), transparent);
+    transform: skewX(-25deg);
+    z-index : 2; 
+    transition: left 0.5s ease; 
+    pointer-events: none;
+}
+.blur-background:hover::after {
+    left: 130%; 
+}
+.slideshow-box {
+  position: relative;
+  height: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.slide-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+}
+
+.slide-img.active {
+  opacity: 1;
+  z-index: 1;
+}

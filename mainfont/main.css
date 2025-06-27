@@ -15,21 +15,21 @@ body {
 .navigation {
   width: 100%;
   background: #fff;
-  box-shadow: 0 6px 15px rgba(84, 129, 13, 0.1);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+  transition: top 0.3s ease; /* Smart Sticky Header */
 }
-
-/* Smart Sticky Header */
-.navigation {
-  transition: top 0.3s ease;
-}
-
-/* Khi scroll xuống, ẩn header bằng cách kéo lên trên */
-.navigation.hide {
-  top: -100px; /* Ẩn ra ngoài màn hình */
+.green-bar {
+  height: 2px; 
+  background-color: #54794a; /* Màu xanh lá */
+  width: 100%;
+  position: fixed;
+  top: 100px; /* Bằng chiều cao nav-wrapper (100px) */
+  left: 0;
+  z-index: 999;
+  display: block !important; /* đảm bảo nó hiển thị */
 }
 
 
@@ -243,6 +243,27 @@ body {
   opacity: 1;
   pointer-events: auto;
 }
+@media (max-width: 1200px) {
+  .nav-left,
+  .nav-right {
+    display: none !important;
+  }
+
+  .nav-wrapper {
+    justify-content: center;
+  }
+
+  .nav-logo {
+    position: relative;
+    left: auto;
+    transform: none;
+  }
+
+  .green-bar {
+    display: block !important;
+  }
+}
+
 
 /* ==== FOOTER ==== */
 .site-footer {

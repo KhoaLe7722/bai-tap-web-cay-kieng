@@ -82,32 +82,31 @@ lists.forEach((item, index) => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
 
-    // Lưu index nếu không phải right-action
-    if (!item.classList.contains("right-action")) {
-      localStorage.setItem("navActiveIndex", index);
-    } else {
-      localStorage.removeItem("navActiveIndex");
-    }
-
-    // Reset active state
-    lists.forEach(i => i.classList.remove('active'));
-    item.classList.add('active');
-
-    // Nếu là right-action → không move indicator, ẩn nó
+    // Trường hợp đặc biệt: Nút Đăng nhập/Đăng ký (right-action) → bỏ active + bỏ chỉ mục
     if (item.classList.contains("right-action")) {
-      indicator.style.opacity = 0;
-    } else {
+      localStorage.removeItem("navActiveIndex");
+      lists.forEach(i => i.classList.remove("active"));  // bỏ active toàn bộ
+      indicator.style.opacity = 0; // Ẩn chỉ mục xanh
+    }
+    // Các nút còn lại (Trang chủ, Sản phẩm, v.v.)
+    else {
+      localStorage.setItem("navActiveIndex", index);
+
+      lists.forEach(i => i.classList.remove("active"));
+      item.classList.add("active");
+
       indicator.style.opacity = 1;
       moveIndicatorTo(item, true);
     }
 
-    // Chuyển trang sau hiệu ứng
+    // Điều hướng sau 300ms
     const href = link.getAttribute('href');
     setTimeout(() => {
       window.location.href = href;
     }, 300);
   });
 });
+
 
 function setActiveByURL() {
   const currentPath = window.location.pathname.split("/").pop();

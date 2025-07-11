@@ -6,7 +6,7 @@
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 120px 20px 60px;
+  padding: 20px 20px 60px;
 }
 
 /* ==== SẢN PHẨM ==== */
@@ -171,7 +171,7 @@
 }
 
 /* === DANH MỤC ĐƯỜNG DẪN === */
-.breadcrumb {
+/*.breadcrumb {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -196,8 +196,8 @@
 }
 
 .breadcrumb li:last-child::after {
-  content: ""; /* Bỏ dấu "/" cuối cùng */
-}
+  content: "";  Bỏ dấu "/" cuối cùng 
+} 
 
 .breadcrumb a {
   text-decoration: none;
@@ -209,9 +209,33 @@
 .breadcrumb a:hover {
   text-decoration: underline;
   color: #3e5d35;
+} */
+
+.page-header {
+  text-align: center;
+  margin-bottom: 30px; 
+  margin-top: 120px;
 }
 
+.page-header h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #54794a;
+}
 
+.breadcrumb {
+  font-size: 14px;
+  color: #777;
+}
+
+.breadcrumb a {
+  color: #554932;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
 /* ==== RESPONSIVE ==== */
 
 @media screen and (max-width: 1024px) {

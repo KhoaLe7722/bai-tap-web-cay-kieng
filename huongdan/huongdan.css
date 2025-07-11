@@ -1,0 +1,83 @@
+.page__huongdan {
+  margin-top: 100px;
+  position: relative;
+  z-index: 2;
+  line-height: 1.8;
+  height: 4350px;
+  /* border: 5px solid  rgb(82, 10, 205); */
+}
+
+.content--center {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
+    url(/images/huongdan/R.jpg);
+  font-size: 32px; 
+  margin-bottom: 0;
+  text-align: center;
+  color: #54794a;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  padding: 60px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 3s ease;
+}
+
+.content--center:hover {
+  color: #fff5e7;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+
+.huongdan--content {
+  background: linear-gradient(135deg, #fff5e7, #f9e0b5);
+
+  width: 100%;
+  height: 4000px;
+  text-align: center;
+  color: #333;
+  transition: background 5s ease-in-out;
+}
+
+
+.huongdan--content:hover {
+  background: linear-gradient(135deg, #f9e0b5, #fff5e7);
+  /* Đảo ngược gradient khi hover */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+.huongdan--img {
+
+  width: 550px;
+  height: 300px;
+  border-radius: 50px;
+}
+
+.huongdan--img:hover {
+  transform: scale(1.05);
+}
+
+.huongdan--contents {
+
+  max-width: 550px;
+  font-size: 24px;
+  text-align: justify;
+  letter-spacing: 0.5px;
+  margin: 0 auto;
+}
+
+.huongdan--title {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+.video{
+  border-radius: 10px;
+   margin: 10px;
+}

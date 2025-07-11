@@ -1,1 +1,258 @@
-<h1>dhsf</h1>
+<!DOCTYPE html>
+<html lang="vi">
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="icon" href="../images/avatar.png" type="image/png" />
+        <title>Đăng ký</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"/>
+        <link rel="stylesheet" href="../dangky_dangnhap/dangky_dangnhap.css" />
+        l
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+        <!-- Ionicons -->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <!--Fonts gg-->
+        <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand&display=swap" rel="stylesheet">
+        <!-- CSS -->
+        <link rel="stylesheet" href="../mainfont/main.css" />
+        
+    </head>
+
+    <body>
+        <header>
+            <nav class="navigation" id="main-nav">
+                <div class="nav-wrapper">
+                <!--Icon Bên trái -->
+                    <ul class="nav-left">
+                        <li class="list active">
+                        <a href="/trangchu/index.html">
+                            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                            <span class="text">Trang Chủ</span>
+                        </a>
+                        </li>
+                        <li class="list">
+                        <a href="/sanpham/sanpham.html">
+                            <span class="icon"><ion-icon name="leaf-outline"></ion-icon></span>
+                            <span class="text">Sản Phẩm</span>
+                        </a>
+                        </li>
+                        <li class="list">
+                        <a href="/gioithieu/gioithieu.html">
+                            <span class="icon"><ion-icon name="information-circle-outline"></ion-icon></span>
+                            <span class="text">Giới Thiệu</span>
+                        </a>
+                        </li>
+                        <li class="list">
+                        <a href="/tintuc/tintuc.html">
+                            <span class="icon"><ion-icon name="newspaper-outline"></ion-icon></span>
+                            <span class="text">Tin Tức</span>
+                        </a>
+                        </li>
+                        <li class="list">
+                        <a href="/huongdan/huongdan.html">
+                            <span class="icon"><ion-icon name="book-outline"></ion-icon></span>
+                            <span class="text">Hướng Dẫn</span>
+                        </a>
+                        </li>
+                        <div class="login-dropdown" id="login-dropdown">
+                            <a href="/dangky_dangnhap/dangnhap.html">Đăng Nhập</a>
+                            <a href="/dangky_dangnhap/dangky.html">Đăng Ký</a>
+                        </div>
+                    </ul>
+                    <div class="green-bar"></div>
+
+                    <!-- Ảnh logo ở giữa -->
+                    <div class="nav-logo">
+                        <a href="/trangchu/index.html">
+                        <img src="../images/Head.jpg" alt="Logo" />
+                        </a>
+                    </div>
+
+                    <!--Icon Bên phải -->
+                    <ul class="nav-right">
+                        <li class="list right-action">
+                        <a href="/giohang/giohang.html">
+                            <span class="icon"><ion-icon name="cart-outline"></ion-icon></span>
+                            <span class="text">Giỏ Hàng</span>
+                        </a>
+                        </li>
+                        <li class="list right-action">
+                            <div class="login-container">
+                                <div class="login-trigger">
+                                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                                    <span class="text">Đăng Nhập</span>
+                                </div>
+                                <div class="login-dropdown" id="login-dropdown">
+                                    <a href="/dangky_dangnhap/dangnhap.html">Đăng Nhập</a>
+                                    <a href="/dangky_dangnhap/dangky.html">Đăng Ký</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- Thanh chỉ mục -->
+                    <div class="indicator"></div>
+            </nav>
+            <!-- JS -->
+            <script defer src="../mainfont/main.js"></script>
+
+        </header>
+
+        <main class="body__main body__main__logout">
+            <div class="auth-form">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng ký</h3>
+                        <a href="../dangky_dangnhap/dangnhap.html" class="auth-form__switch-btn">Đăng nhập</a>
+                    </div>
+
+                    <form id="registerForm">
+                        <div class="auth-form__form">
+                            <div class="auth-form__group">
+                                <label for="name" class="form-label">Tên đầy đủ</label>
+                                <input 
+                                    id="name" 
+                                    name="name" 
+                                    type="text" 
+                                    class="auth-form__input" 
+                                    placeholder="VD: Trần Nam Cường" 
+                                    required 
+                                    onblur="checkName()"
+                                />
+                                <small id="feedback-name" class="form-message"></small>
+                            </div>
+
+                            <div class="auth-form__group">
+                                <label for="email" class="form-label">Email</label>
+                                <input 
+                                    id="email" 
+                                    name="email" 
+                                    type="text" 
+                                    class="auth-form__input" 
+                                    placeholder="VD: trancuong111101@gmail.com" 
+                                    required 
+                                    onblur="checkEmail()"
+                                />
+                                <small id="feedback-email" class="form-message"></small>
+                            </div>
+
+                            <div class="auth-form__group">
+                                <label for="password" class="form-label">Mật khẩu</label>
+                                <input 
+                                    id="password" 
+                                    name="password" 
+                                    type="password" 
+                                    class="auth-form__input" 
+                                    placeholder="Ít nhất 8 ký tự" 
+                                    required 
+                                    onblur="checkPassword()"
+                                />
+                                <small id="feedback-password" class="form-message"></small>
+                            </div>
+
+                            <div class="auth-form__group">
+                                <label for="confirm_password" class="form-label">Xác nhận mật khẩu</label>
+                                <input 
+                                    id="confirm_password" 
+                                    name="confirm_password" 
+                                    type="password" 
+                                    class="auth-form__input" 
+                                    placeholder="Nhập lại mật khẩu" 
+                                    required 
+                                    onblur="checkConfirmPassword()"
+                                />
+                                <small id="feedback-confirm_password" class="form-message"></small>
+                            </div>
+                        </div>
+
+                        <div class="auth-form__aside">
+                            <p class="auth-form__policy-text">
+                            Bằng việc đăng ký, bạn đã đồng ý với cửa hàng Thuận Phát G Garden chúng tôi về
+                            <a href="#" class="auth-form__text-link">Điều khoản dịch vụ & </a> 
+                            <a href="#" class="auth-form__text-link">Chính sách bảo mật</a>
+                            </p>
+                        </div>
+
+                        <div class="auth-form__controls">
+                            <a href="../trangchu/index.html" class="btn btn--normal auth-form__controls-back">TRỞ LẠI</a>
+                            <button type="submit" class="btn btn--primary">ĐĂNG KÝ</button>
+                        </div>
+
+                        <div class="auth-form__socials">
+                            <a href="#" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                            <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+                            <span class="auth-form__socials-title"> Kết nối với Facebook</span>
+                            </a>
+                            <a href="#" class="auth-form__socials--google btn btn--size-s btn--with-icon">
+                            <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google" class="auth-form__google-img" />
+                            <span class="auth-form__socials-title">Kết nối với Google</span>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="box__success">
+                <img class="img__success" src="../images/dangky_dangnhap/success.png" alt="thông báo">
+                <p>Đăng ký thành công! <br>Chào mừng bạn đến cửa hàng Thuận Phát G Garden chúng tôi</p>
+                <button type="submit" class="button__success">Đã hiểu</button>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-container">
+                
+                <!-- Cột 1: Giới thiệu -->
+                <div class="footer-column">
+                    <h3>Về Chúng Tôi</h3>
+                    <p>Thuận Phát G Garden chuyên cung cấp các loại terrarium độc đáo, mang thiên nhiên đến gần hơn với bạn.</p>
+                    <p>• Vườn nhiệt đới cây và rêu trong bể kính </p>
+                    <p>• Trung thực với khách hàng - Sáng tạo với nghệ thuật</p>
+                </div>
+
+                <!-- Cột 2: Liên kết nhanh -->
+                <div class="footer-column">
+                    <h3>Liên Kết Nhanh</h3>
+                    <ul>
+                        <li><a href="/trangchu/index.html">Trang Chủ</a></li>
+                        <li><a href="/sanpham/sanpham.html">Sản Phẩm</a></li>
+                        <li><a href="/gioithieu/gioithieu.html">Giới Thiệu</a></li>
+                        <li><a href="/huongdan/huongdan.html">Hướng Dẫn</a></li>
+                        <li><a href="/lienhe/lienhe.html">Liên Hệ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột 3: Liên hệ -->
+                <div class="footer-column">
+                    <h3>Liên Hệ</h3>
+                    <p><ion-icon name="call-outline"></ion-icon> 083 977 8271</p>
+                    <p><ion-icon name="mail-outline"></ion-icon> thuanphatggarden@gmail.com</p>
+                    <p><ion-icon name="location-outline"></ion-icon> Quán nước HOA YÊN, 131 đường Lý Tự Trọng, Cần Thơ.</p>
+                    <p><ion-icon name="location-outline"></ion-icon>  Ngọc Trương Coffee, 372B Đ. Nguyễn Văn Cừ, Phường An Khánh, Ninh Kiều, Cần Thơ.</p>
+                    <p><ion-icon name="location-outline"></ion-icon> Tổ Của Yến Coffee, số 13, đường Trần Ngọc Quế, P Xuân Khánh, Q Ninh Kiều, TP Cần Thơ.</p>
+                </div>
+
+                <!-- Cột 4: Mạng xã hội -->
+                <div class="footer-column">
+                    <h3>Theo Dõi Chúng Tôi</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/thuanphatggarden" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="https://www.youtube.com/@anhshopcantho/featured" target="_blank"><ion-icon name="logo-youtube"></ion-icon></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                &copy; Bản quyền thuộc về Thuận Phát G Garden.
+            </div>
+
+        </footer>
+
+    </body>
+
+     <script src="../dangky_dangnhap/dangky.js"></script>
+
+</html>

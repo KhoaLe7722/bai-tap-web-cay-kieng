@@ -3,39 +3,51 @@
 const products = [
   {
     id: 1,
-    name: "Terrarium Rêu Mini",
-    price: 180000,
-    image: "image_sanpham/1.jpg"
+    name: "Terrarium bình trứng Mini",
+    price: 157000,
+    image: "image_sanpham/Bình trứng Mini/1.jpg"
   },
   {
     id: 2,
-    name: "Terrarium Lớn Sang Trọng",
-    price: 320000,
-    image: "image_sanpham/2.jpg"
+    name: "Terrarium bình trụ 14x9",
+    price: 357000,
+    image: "image_sanpham/Terrarium bình trụ 14x9 (2)/2.jpg"
   },
   {
     id: 3,
-    name: "Bình Trang Trí Phong Cách Nhật",
-    price: 250000,
-    image: "image_sanpham/3.jpg"
+    name: "Bình Mini Cube 12x12",
+    price: 599000,
+    image: "image_sanpham/Bình Mini Cube 12x12/1.jpg"
   },
   {
     id: 4,
-    name: "Combo Rêu + Phụ kiện",
-    price: 480000,
-    image: "image_sanpham/4.jpg"
+    name: "Terrarium Đa Giác 16x16x32",
+    price: 957000,
+    image: "image_sanpham/Terrarium Đa Giác 16x16x32/1.jpg"
   },
   {
     id: 5,
-    name: "Terrarium Gỗ Tự Nhiên",
-    price: 350000,
-    image: "image_sanpham/5.jpg"
+    name: "Terrarium Đa Giác 20x20x32",
+    price: 957000,
+    image: "image_sanpham/Terrarium Đa Giác 20x20x32/1.jpg"
   },
   {
     id: 6,
-    name: "Terrarium Gỗ Tự Nhiên",
-    price: 350000,
-    image: "image_sanpham/6.jpg"
+    name: "Terrarium Đa Giác 16x16x34",
+    price: 1357000,
+    image: "image_sanpham/Terrarium Đa Giác 16x16x34/3.jpg"
+  },
+  {
+    id: 7,
+    name: "Terrarium Đa Giác 23x23x40",
+    price: 1500000,
+    image: "image_sanpham/Terrarium Đa Giác 23x23x40/1.jpg"
+  },
+  {
+    id: 8,
+    name: "Đèn LED đế gổ",
+    price:"160,000 - 290,000",
+    image: "image_sanpham/Đèn.jpg"
   }
 ];
 

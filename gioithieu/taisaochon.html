@@ -1,26 +1,286 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <style>
-    body {
-      margin: 0;
-      font-size: 16px;
-      line-height: 1.6;
-      padding: 10px;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../images/avatar.png" type="image/png" />
+  <title>Terrarium Cần Thơ | Thuận Phát G Garden</title>
 
-    ul {
-      padding-left: 20px;
-    }
-  </style>
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <!--Fonts gg-->
+  <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand&display=swap" rel="stylesheet">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/mainfont/main.css" />
+  <link rel="stylesheet" href="/gioithieu/gioithieu.css">
 </head>
 <body>
-  <ul>
-    <li>Chất lượng sản phẩm đảm bảo</li>
-    <li>Dịch vụ khách hàng tận tâm</li>
-    <li>Thiết kế độc đáo và sáng tạo</li>
-    <li>Giá cả hợp lý</li>
-  </ul>
+  <nav class="navigation" id="main-nav">
+    <div class="nav-wrapper">
+      <!--Icon Bên trái -->
+      <ul class="nav-left">
+        <li class="list active">
+          <a href="/trangchu/index.html">
+            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+            <span class="text">Trang Chủ</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="/sanpham/sanpham.html">
+            <span class="icon"><ion-icon name="leaf-outline"></ion-icon></span>
+            <span class="text">Sản Phẩm</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="/gioithieu/gioithieu.html">
+            <span class="icon"><ion-icon name="information-circle-outline"></ion-icon></span>
+            <span class="text">Giới Thiệu</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="/tintuc/tintuc.html">
+            <span class="icon"><ion-icon name="newspaper-outline"></ion-icon></span>
+            <span class="text">Tin Tức</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="/huongdan/huongdan.html">
+            <span class="icon"><ion-icon name="book-outline"></ion-icon></span>
+            <span class="text">Hướng Dẫn</span>
+          </a>
+        </li>
+        <div class="login-dropdown" id="login-dropdown">
+              <a href="/dangky_dangnhap/dangnhap.html">Đăng Nhập</a>
+              <a href="/dangky_dangnhap/dangky.html">Đăng Ký</a>
+        </div>
+      </ul>
+      <div class="green-bar"></div>
+
+      <!-- Ảnh logo ở giữa -->
+      <div class="nav-logo">
+        <a href="/trangchu/index.html">
+        <img src="../images/Head.jpg" alt="Logo" />
+        </a>
+      </div>
+
+      <!--Icon Bên phải -->
+      <ul class="nav-right">
+        <li class="list right-action">
+          <a href="/giohang/giohang.html">
+            <span class="icon"><ion-icon name="cart-outline"></ion-icon></span>
+            <span class="text">Giỏ Hàng</span>
+          </a>
+        </li>
+         <li class="list right-action">
+  <div class="login-container">
+    <div class="login-trigger">
+      <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+      <span class="text">Đăng Nhập</span>
+    </div>
+    <div class="login-dropdown" id="login-dropdown">
+      <a href="/dangky_dangnhap/dangnhap.html">Đăng Nhập</a>
+      <a href="/dangky_dangnhap/dangky.html">Đăng Ký</a>
+    </div>
+  </div>
+</li>
+      </ul>
+
+    <!-- Thanh chỉ mục -->
+    <div class="indicator"></div>
+  </nav>
+  <!-- JS -->
+  <script defer src="/mainfont/main.js"></script>
+
+  <!--Phần code của từng trang-->
+  <main class="page-main">
+    <div class="page__intro">
+      <h1>Vì sao terrarium của Thuận Phát Garden ngày càng được ưa chuộng?</h1>
+      <p>
+        Trong làn sóng sống xanh và sống đẹp ngày nay, việc tìm một sản phẩm trang trí vừa mang tính thẩm mỹ, vừa dễ chăm sóc, lại giúp tinh thần thư giãn là điều mà nhiều người đang hướng đến. Terrarium – đặc biệt là các mẫu được thiết kế độc quyền tại Thuận Phát Garden – không chỉ là chậu cây cảnh, mà là tác phẩm nghệ thuật sống có thể chạm đến cảm xúc và gu thẩm mỹ của người sở hữu.
+      </p>
+    </div>
+
+    <article class="main__article">
+      <h1 class="main__tile--primary">🌿 1. Thiết kế đa dạng và thẩm mỹ cao</h1>
+      <section class="main__section">
+        <div class="photo-row">
+          
+          <img src="./11.jpg" alt="" class="main__photo">
+          <img src="./1.jpg" alt="photo" class="main__photo">
+          <img src="./10.jpg" alt="" class="main__photo">
+        </div>
+          
+        <p>
+          Những mẫu nhỏ gọn như Trứng, Bình trụ, Mini Cube cho đến các mẫu Đa giác cao cấp, sản phẩm tại Thuận Phát Garden đều được thiết kế tinh tế, hiện đại và độc đáo.
+          
+        </p>
+        
+        <p>Mỗi sản phẩm đều là một mô hình thu nhỏ giàu tính nghệ thuật, có thể đặt tại bàn làm việc, quầy lễ tân, kệ sách, hoặc làm quà tặng cao cấp. Đặc biệt, dòng Đa giác với các khối hình 3D phối tượng thiền, mang lại cảm giác an yên, cân bằng giữa bộn bề cuộc sống.</p>
+      </section>
+    </article>
+      
+    
+    <article class="main__article">
+      <h1 class="main__tile--primary">🧩 2. Sản phẩm được thiết kế theo yêu cầu</h1>
+      <section class="main__section">
+         <div class="photo-row">
+          
+          <img src="./12.jpg" alt="" class="main__photo">
+          <img src="./494918998_609129592151218_3123889810502138290_n.jpg" alt="photo" class="main__photo">
+          <img src="./13.jpg" alt="" class="main__photo">
+        </div>
+        
+        <p>
+          Một trong những điểm khiến khách hàng gắn bó với Thuận Phát Garden chính là khả năng cá nhân hóa cao. Bạn có thể gửi:
+        </p>
+        <ul class="list">
+          <li class="list__item">
+              Kích thước mong muốn
+          </li>
+          
+          <li class="list__item">
+              Chủ đề (thiền, rừng, nhật thực, kỷ niệm, biểu tượng...)
+          </li>
+          <li class="list__item">Tông màu hoặc cảm hứng riêng</li>
+        </ul>
+        <p>→ Tất cả sẽ được đội ngũ thiết kế hỗ trợ để tạo nên một terrarium độc bản – không nơi nào có bản sao tương tự.</p>
+        
+      </section>
+    </article>
+    
+    <article class="main__article">
+      <h1 class="main__tile--primary">💡 3. Trang bị đèn LED để gỗ sang trọng– nâng tầm không gian</h1>
+      <section class="main__section">
+        <div class="photo-row">
+          
+          <img src="./15.jpg" alt="" class="main__photo">
+          <img src="./16.jpg" alt="photo" class="main__photo">
+          <img src="./17.jpg" alt="" class="main__photo">
+        </div>
+        
+        <p>Không chỉ đẹp ban ngày, terrarium của Thuận Phát Garden còn lung linh khi lên đèn. Với hệ đèn LED thiết kế ẩn tinh tế kết hợp chân gỗ cao cấp, sản phẩm mang dáng dấp của một đèn decor nội thất cao cấp.</p>
+        <p>Bạn có thể sử dụng như một đèn ngủ nhẹ nhàng, hoặc đèn trang trí bàn làm việc mà vẫn giữ được nét xanh và sinh động vốn có của hệ sinh thái bên trong.</p>
+        
+      </section>
+    </article>
+    
+    <article class="main__article">
+      <h1 class="main__tile--primary">💰 4. Giá hợp lý</h1>
+      <section class="main__section">
+        
+        <div class="photo-row">
+        <img 
+          src="/images/z6700413977853_fb35479316fe7a6b0e66ced29e48b314.jpg" 
+          alt="Ảnh giá cả" 
+          class="main__photo" 
+          style="width: 80%; max-width: 600px; height: auto; display: block; margin: 0 auto; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); object-fit: cover;">
+      </div>
+        
+        <p>Mặc dù được thiết kế kỹ lưỡng và đầu tư chất liệu tỉ mỉ, giá thành terrarium tại Thuận Phát Garden vẫn ở mức phổ thông:</p>
+        <ul class="list">
+          <li class="list__item">
+            Mẫu nhỏ từ 157.000đ
+          </li>
+          
+          <li class="list__item">
+              Mẫu cao cấp nhất chỉ khoảng 1.5 triệu đồng
+          </li>
+        
+        </ul>
+        <p>→ Một mức giá vô cùng cạnh tranh so với giá trị thẩm mỹ và độ bền mà bạn nhận lại.</p>
+        
+
+      </section>
+    </article>
+     
+  
+  
+    <article class="main__article">
+      <h1 class="main__tile--primary">🪴 5. Mang thiên nhiên vào không gian sống – không tốn công chăm sóc</h1>
+      <section class="main__section">
+        <div class="photo-row">
+          
+          <img src="./22.jpg" alt="" class="main__photo">
+          <img src="./20.jpg" alt="photo" class="main__photo">
+          <img src="./21.jpg" alt="" class="main__photo">
+        </div>
+        <p>Khác với cây cảnh truyền thống, terrarium gần như không cần chăm sóc hàng ngày. Rêu và cây trồng được chọn lọc kỹ, phát triển chậm, ít rụng lá. Nền thông minh giữ ẩm tốt, không cần tưới thường xuyên.</p>
+        <p>Dù bạn là người bận rộn, ở chung cư nhỏ, văn phòng không có cửa sổ, bạn vẫn có thể đưa thiên nhiên vào gần mình một cách dễ chịu và tiện lợi.</p>
+        
+      </section>
+    </article>
+   
+
+    <article class="main__article">
+      <h1 class="main__tile--primary">🤝 6. Uy tín từ thương hiệu – chất lượng từ thực tế</h1>
+      <section class="main__section">
+         <div class="photo-row">
+          
+          <img src="./26.jpg" alt="" class="main__photo">
+          <img src="./28.jpg" alt="photo" class="main__photo">
+          <img src="./27.jpg" alt="" class="main__photo">
+        </div>
+        <p>Thuận Phát Garden không bán hàng đại trà, không lấy hình mạng. Tất cả sản phẩm đều có ảnh thật – thiết kế thật – đánh giá thật từ khách hàng. Thương hiệu luôn chú trọng trải nghiệm cá nhân hóa, chăm sóc hậu mãi và hướng đến sự bền vững lâu dài.</p>
+       
+      </section>
+    </article>
+  </main>
+
+
 </body>
+
+<!--Footer-->
+<footer class="site-footer">
+  <div class="footer-container">
+    
+    <!-- Cột 1: Giới thiệu -->
+    <div class="footer-column">
+      <h3>Về Chúng Tôi</h3>
+      <p>Thuận Phát G Garden chuyên cung cấp các loại terrarium độc đáo, mang thiên nhiên đến gần hơn với bạn.</p>
+      <p>• Vườn nhiệt đới cây và rêu trong bể kính </p>
+      <p>• Trung thực với khách hàng - Sáng tạo với nghệ thuật</p>
+    </div>
+
+    <!-- Cột 2: Liên kết nhanh -->
+    <div class="footer-column">
+      <h3>Liên Kết Nhanh</h3>
+      <ul>
+        <li><a href="/trangchu/index.html">Trang Chủ</a></li>
+        <li><a href="/sanpham/sanpham.html">Sản Phẩm</a></li>
+        <li><a href="/gioithieu/gioithieu.html">Giới Thiệu</a></li>
+        <li><a href="/huongdan/huongdan.html">Hướng Dẫn</a></li>
+        <li><a href="/lienhe/lienhe.html">Liên Hệ</a></li>
+      </ul>
+    </div>
+
+    <!-- Cột 3: Liên hệ -->
+    <div class="footer-column">
+      <h3>Liên Hệ</h3>
+      <p><ion-icon name="call-outline"></ion-icon> 083 977 8271</p>
+      <p><ion-icon name="mail-outline"></ion-icon> thuanphatggarden@gmail.com</p>
+      <p><ion-icon name="location-outline"></ion-icon> Quán nước HOA YÊN, 131 đường Lý Tự Trọng, Cần Thơ.</p>
+      <p><ion-icon name="location-outline"></ion-icon>  Ngọc Trương Coffee, 372B Đ. Nguyễn Văn Cừ, Phường An Khánh, Ninh Kiều, Cần Thơ.</p>
+      <p><ion-icon name="location-outline"></ion-icon> Tổ Của Yến Coffee, số 13, đường Trần Ngọc Quế, P Xuân Khánh, Q Ninh Kiều, TP Cần Thơ.</p>
+    </div>
+
+    <!-- Cột 4: Mạng xã hội -->
+    <div class="footer-column">
+      <h3>Theo Dõi Chúng Tôi</h3>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/thuanphatggarden" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
+        <a href="https://www.youtube.com/@anhshopcantho/featured" target="_blank"><ion-icon name="logo-youtube"></ion-icon></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; Bản quyền thuộc về Thuận Phát G Garden.
+  </div>
+
+</footer>
 </html>

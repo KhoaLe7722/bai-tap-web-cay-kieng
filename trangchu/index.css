@@ -108,3 +108,66 @@
 .slider-arrow.next {
   right: 10px;
 }
+/* SẢN PHẨM NỔI BẬT */
+.sanpham-noibat {
+  max-width: 1150px;
+  margin: 50px auto;
+  padding: 22px;
+  text-align: center;
+}
+
+.sanpham-noibat h2 {
+  text-align: center;
+  font-size: 32px;
+  color: #000000;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+.sanpham-noibat h2::after {
+  content: '';
+  display: block;
+  width: 300px;
+  height: 4px;
+  background-color: #54794a;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  overflow: hidden; /* Ngăn ảnh tràn ra ngoài */
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.product-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.product-card p {
+  color: #54794a;
+  font-weight: bold;
+  font-size: 1.4rem;
+}

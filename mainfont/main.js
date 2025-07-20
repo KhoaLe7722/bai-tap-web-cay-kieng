@@ -1,23 +1,19 @@
+// ==== Indicator Nav (Thanh chỉ mục xanh) ====
 const nav = document.getElementById('main-nav');
 const lists = nav.querySelectorAll('.list');
 const indicator = nav.querySelector('.indicator');
 
-// Hàm tính vị trí thanh indicator dưới icon
+// Di chuyển indicator theo icon
 function moveIndicatorTo(item, withTransition = true) {
   const icon = item.querySelector('.icon');
   const iconRect = icon.getBoundingClientRect();
   const navRect = nav.getBoundingClientRect();
   const left = iconRect.left - navRect.left + icon.offsetWidth / 2 - 30;
 
-  if (!withTransition) {
-    indicator.style.transition = 'none'; // Tắt hiệu ứng
-  } else {
-    indicator.style.transition = 'left 0.3s ease'; // Bật lại
-  }
-
   indicator.style.left = `${left}px`;
+  indicator.style.transition = withTransition ? 'left 0.3s ease' : 'none';
 
-  // Bật lại transition sau khi set xong vị trí ban đầu
+  // Nếu không có hiệu ứng thì bật lại sau 1 frame
   if (!withTransition) {
     requestAnimationFrame(() => {
       indicator.style.transition = 'left 0.3s ease';
@@ -25,93 +21,11 @@ function moveIndicatorTo(item, withTransition = true) {
   }
 }
 
-// Gán trạng thái active dựa theo URL và previous index
+// Đặt menu active dựa vào URL
 function setActiveByURL() {
   const currentPath = window.location.pathname.split("/").pop();
-  const previousIndex = localStorage.getItem('navActiveIndex');
-
-  lists.forEach((item, index) => {
-    const link = item.querySelector("a");
-    const href = link.getAttribute("href");
-
-    if (href === currentPath) {
-      item.classList.add("active");
-
-      // Nếu có vị trí cũ → di chuyển từ vị trí cũ
-      if (previousIndex !== null && previousIndex != index) {
-        const prevItem = lists[previousIndex];
-        moveIndicatorTo(prevItem, false); // Không hiệu ứng
-        setTimeout(() => moveIndicatorTo(item, true), 10); // Animate
-      } else {
-        moveIndicatorTo(item, false); // Đặt đúng vị trí, không animate
-      }
-    } else {
-      item.classList.remove("active");
-    }
-  });
-
-  localStorage.removeItem('navActiveIndex');
-}
-
-// Bắt sự kiện click icon để lưu index và chuyển trang
-lists.forEach((item, index) => {
-  const link = item.querySelector('a');
-
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    // Lưu index hiện tại
-    localStorage.setItem('navActiveIndex', index);
-
-    // Set active + hiệu ứng
-    lists.forEach(i => i.classList.remove('active'));
-    item.classList.add('active');
-    moveIndicatorTo(item, true);
-
-    // Chờ hiệu ứng xong rồi chuyển trang
-    const href = link.getAttribute('href');
-    setTimeout(() => {
-      window.location.href = href;
-    }, 300);
-  });
-});
-
-lists.forEach((item, index) => {
-  const link = item.querySelector('a');
-
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    // Trường hợp đặc biệt: Nút Đăng nhập/Đăng ký (right-action) → bỏ active + bỏ chỉ mục
-    if (item.classList.contains("right-action")) {
-      localStorage.removeItem("navActiveIndex");
-      lists.forEach(i => i.classList.remove("active"));  // bỏ active toàn bộ
-      indicator.style.opacity = 0; // Ẩn chỉ mục xanh
-    }
-    // Các nút còn lại (Trang chủ, Sản phẩm, v.v.)
-    else {
-      localStorage.setItem("navActiveIndex", index);
-
-      lists.forEach(i => i.classList.remove("active"));
-      item.classList.add("active");
-
-      indicator.style.opacity = 1;
-      moveIndicatorTo(item, true);
-    }
-
-    // Điều hướng sau 300ms
-    const href = link.getAttribute('href');
-    setTimeout(() => {
-      window.location.href = href;
-    }, 300);
-  });
-});
-
-
-function setActiveByURL() {
-  const currentPath = window.location.pathname.split("/").pop();
-
   let matched = false;
+
   lists.forEach((item) => {
     const link = item.querySelector("a");
     const href = link.getAttribute("href");
@@ -121,7 +35,7 @@ function setActiveByURL() {
       item.classList.add("active");
 
       if (item.classList.contains("right-action")) {
-        indicator.style.opacity = 0; // Không hiển thị thanh chỉ mục
+        indicator.style.opacity = 0;
       } else {
         moveIndicatorTo(item, false);
         indicator.style.opacity = 1;
@@ -135,32 +49,59 @@ function setActiveByURL() {
   localStorage.removeItem("navActiveIndex");
 }
 
-// Khi trang load, đánh dấu active đúng
+// Xử lý click vào menu
+lists.forEach((item, index) => {
+  const link = item.querySelector('a');
+
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (item.classList.contains("right-action")) {
+      localStorage.removeItem("navActiveIndex");
+      lists.forEach(i => i.classList.remove("active"));
+      indicator.style.opacity = 0;
+    } else {
+      localStorage.setItem("navActiveIndex", index);
+      lists.forEach(i => i.classList.remove("active"));
+      item.classList.add("active");
+      indicator.style.opacity = 1;
+      moveIndicatorTo(item, true);
+    }
+
+    // Điều hướng sau 300ms
+    setTimeout(() => {
+      window.location.href = link.getAttribute("href");
+    }, 300);
+  });
+});
+
+// Tự set active khi load trang
 window.addEventListener('load', setActiveByURL);
 
-// Ẩn/Hiện thanh điều hướng khi cuộn
+
+// ==== Ẩn hiện thanh menu khi cuộn ====
 let lastScrollY = window.scrollY;
 const navBar = document.getElementById('main-nav');
 
 window.addEventListener('scroll', () => {
   const currentScrollY = window.scrollY;
 
-  // Nếu cuộn xuống > 10px và đang cuộn xuống
   if (currentScrollY > lastScrollY && currentScrollY > 10) {
     navBar.classList.add('nav-hidden');
-  } 
-  // Nếu cuộn lên dù chỉ một chút
-  else {
+  } else {
     navBar.classList.remove('nav-hidden');
   }
 
   lastScrollY = currentScrollY;
 });
-  const loginContainer = document.querySelector('.login-container');
-  const dropdown = loginContainer.querySelector('.login-dropdown');
 
-  let hideTimeout;
 
+// ==== Dropdown đăng nhập ====
+const loginContainer = document.querySelector('.login-container');
+const dropdown = loginContainer?.querySelector('.login-dropdown');
+let hideTimeout;
+
+if (loginContainer && dropdown) {
   loginContainer.addEventListener('mouseenter', () => {
     clearTimeout(hideTimeout);
     dropdown.style.display = 'flex';
@@ -172,5 +113,41 @@ window.addEventListener('scroll', () => {
     hideTimeout = setTimeout(() => {
       dropdown.style.opacity = '0';
       dropdown.style.pointerEvents = 'none';
-    }, 300); // delay đóng 300ms
+    }, 300);
   });
+}
+
+
+// ==== Popup Giỏ hàng hover ====
+document.addEventListener("DOMContentLoaded", () => {
+  const cartToggle = document.getElementById("cart-toggle");
+  const cartPopup = document.getElementById("cart-popup");
+
+  if (cartToggle && cartPopup) {
+    let hideTimer;
+
+    const showCart = () => {
+      cartPopup.style.display = "block";
+    };
+
+    const hideCart = () => {
+      cartPopup.style.display = "none";
+    };
+
+    const clearHideTimer = () => clearTimeout(hideTimer);
+    const startHideTimer = () => hideTimer = setTimeout(hideCart, 300);
+
+    cartToggle.addEventListener("mouseenter", () => {
+      showCart();
+      clearHideTimer();
+    });
+
+    cartToggle.addEventListener("mouseleave", startHideTimer);
+    cartPopup.addEventListener("mouseenter", clearHideTimer);
+    cartPopup.addEventListener("mouseleave", startHideTimer);
+
+    // Nút đóng trong popup
+    const closeBtn = cartPopup.querySelector(".close-cart");
+    closeBtn?.addEventListener("click", hideCart);
+  }
+});

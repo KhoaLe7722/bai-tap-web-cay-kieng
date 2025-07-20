@@ -1,0 +1,130 @@
+<div class="container">
+     <h2 class="product_title">Bình Mini Cube 12x12</h2>
+
+<p class="product-code">Mã sản phẩm: <strong>(Đang cập nhật...)</strong></p>
+<p class="product-rating">★★★★★ Viết đánh giá của bạn</p>
+ <hr>
+<div class="product-main">
+  <div class="product-images">
+    <img src="./image_sanpham/Bình Mini Cube 12x12/1.jpg" alt="Terrarium chính" class="product-images-main">
+    <div class="product-thumbnails">
+      <img src="./image_sanpham/Bình Mini Cube 12x12/2.jpg" alt="Ảnh phụ 1" class="product-thumb">
+      <img src="./image_sanpham/Bình Mini Cube 12x12/3.jpg" alt="Ảnh phụ 2" class="product-thumb">
+    </div>
+    <div id = "imageModal"class="modal" onclick="closeImage()">
+      <span class = "close"> &times;</span>
+      <img class="modal-content" id = "modalImg">
+      </div>
+  </div>
+
+ 
+  <div class="product-info-box">
+    <p class="product-price"><span class="current-price">157.000đ</span></p>
+    <p class="old-price">Giá thị trường: <del>200.000đ</del></p>
+    <p class="discount">Tiết kiệm: 20000đ</p>
+    <p class="product-status">Tình trạng: <span class="in-stock">Còn hàng</span></p>
+
+    <div class="product-option">
+  <p>Đèn</p>
+  <div class="swatch">
+    <div class="swatch-element">
+      <input type="radio" id="den-co" name="den" checked hidden>
+      <label for="den-co">CÓ ĐÈN</label>
+    </div>
+    <div class="swatch-element">
+      <input type="radio" id="den-khong" name="den" hidden>
+      <label for="den-khong">KHÔNG ĐÈN</label>
+    </div>
+  </div>
+</div>
+
+
+
+    <div class="product-quantity">
+      <button class="btn-qty">-</button>
+      <input type="text" value="1" class="qty-input">
+      <button class="btn-qty">+</button>
+    </div>
+
+    <button class="btn-buy">MUA NGAY</button>
+
+    <p class="hotline">Gọi để được tư vấn: <strong>0373979656</strong></p>
+    <p class="payment-method">Chấp nhận thanh toán bằng: <img src="./img/visa.png"> <img src="./img/paypal.png"></p>
+  </div>
+
+  <div class="sidebar-widget">
+    <h3>Hướng dẫn chăm sóc cây</h3>
+    <ul>
+      <li><a href="#">CÁCH CHĂM SÓC CÂY CHO NGƯỜI MỚI SETUP</a></li>
+
+      <li><a href="#">TIN TỨC MỚI TERRARIUMS</a></li>
+      <li><a href="#">MỘT SỐ SẢN PHẨM BẠN CÓ THỂ QUAN TÂM</a></li>
+    </ul>
+  </div>
+</div>
+ 
+<h3 style="margin-top: 20px;">MÔ TẢ</h3>
+
+<hr>
+
+<!-- MÔ TẢ SẢN PHẨM -->
+<div class="product-description">
+  
+  <p><strong>Concept:</strong> Thuận Phát Garden</p>
+  <p><strong>Loại bình:</strong> Bình Terrarium hình hộp đứng – viền kính trong suốt, thiết kế hiện đại</p>
+  <p><strong>Chất liệu:</strong> Thuỷ tinh dày 3mm, viền silicon độ đàn hồi cao, được làm thủ công tỉ mỉ, đảm bảo độ bền và độ trong suốt thẩm mỹ.</p>
+  <p><strong>Kích thước bình (Dài × Rộng × Cao):</strong> <br> <span style="font-size: 30px;">12 x 12 x 12 cm</span></p>
+
+  <p><strong>Thực vật bên trong:</strong></p>
+  <ul>
+    <li>Rêu xanh tươi bản địa (4–10 loại tùy mùa)</li>
+    <li>Dương xỉ lá me, cỏ trang trí</li>
+    <li>Gỗ mục tạo hiệu ứng cổ điển</li>
+    <li>*Giá chưa bao gồm mô hình động vật*</li>
+  </ul>
+
+  <p><strong>Phụ kiện kèm theo:</strong> Bình xịt chống nấm mốc, hướng dẫn chăm sóc</p>
+
+  <p><strong>Sản phẩm được thiết kế:</strong> Trang trí bàn làm việc, phòng ngủ, kệ sách, hoặc làm quà tặng sinh nhật, tân gia,...</p>
+
+  <p><strong>Về sản phẩm:</strong> “Một lần chạm vào vĩnh yên.”<br>
+  Tông màu lạnh, rêu dày và đá cổ tạo cảm giác thiêng liêng – như một khu rừng tĩnh lặng riêng của bạn.</p>
+
+  <p><strong>Hướng dẫn chăm sóc:</strong></p>
+  <ul>
+    <li>Nhiệt độ: 18 – 32°C</li>
+    <li>Tưới nước 3–4 ngày/lần trong 3 tuần đầu. Sau đó, chỉ tưới khi thấy bình khô.</li>
+    <li>Không để nắng trực tiếp. Có thể dùng đèn LED 3–8 tiếng/ngày.</li>
+    <li>Luôn đóng nắp bình để giữ ẩm.</li>
+  </ul>
+
+  <p class="thank-you">Thuận Phát Garden xin chân thành cảm ơn Quý Khách!</p>
+</div>
+  </div>
+ 
+<script>
+  // Lặp qua tất cả ảnh phụ và gán sự kiện click
+  document.querySelectorAll('.product-thumb').forEach(img => {
+    img.addEventListener('click', function () {
+      openImage(this.src);
+    });
+  });
+
+  function openImage(src) {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    modalImg.src = src;
+    modal.style.display = "block";
+  }
+
+  function closeImage() {
+    document.getElementById("imageModal").style.display = "none";
+  }
+
+  // Tắt modal khi click ra ngoài ảnh
+  document.getElementById("imageModal").addEventListener("click", function (e) {
+    if (e.target === this || e.target.classList.contains("close")) {
+      closeImage();
+    }
+  });
+</script>

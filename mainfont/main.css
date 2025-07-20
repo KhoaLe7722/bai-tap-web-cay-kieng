@@ -21,6 +21,7 @@ body {
   z-index: 1000;
   transition: top 0.3s ease; /* Smart Sticky Header */
 }
+/* ================================= Header ================================= */
 .green-bar {
   height: 2px; 
   background-color: #54794a; /* Màu xanh lá */
@@ -266,7 +267,7 @@ body {
 }
 
 
-/* ==== FOOTER ==== */
+/* ================================================== FOOTER =========================================================== */
 .site-footer {
   background-color: #f3f3f3;
   padding: 40px 20px 20px;

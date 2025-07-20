@@ -1,0 +1,56 @@
+/* giohang/giohang.css */
+.cart-popup {
+  position: fixed;
+  top: 102.5px;
+  right: 120px;
+  width: 320px;
+  background: #fff;
+  border: 2px solid #54794a;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  z-index: 1000;
+  display: none;
+  font-family: 'Dosis', sans-serif;
+}
+
+.cart-popup h3 {
+  margin-top: 0;
+  color: #54794a;
+  font-size: 20px;
+}
+
+#cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#cart-items li {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-total {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
+}
+
+.close-cart {
+  margin-top: 10px;
+  background: #54794a;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.close-cart:hover {
+  background: #6fa55d;
+}

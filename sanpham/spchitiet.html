@@ -1,14 +1,252 @@
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <title>Chi tiết sản phẩm</title>
-  <link rel="stylesheet" href="/sanpham/sanpham.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../images/avatar.png" type="image/png" />
+  <title>Terrarium Cần Thơ | Thuận Phát G Garden</title>
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <!--Fonts gg-->
+  <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand&display=swap" rel="stylesheet">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/mainfont/main.css" />
+  <link rel="stylesheet" href="./spchitiet.css">
 </head>
 <body>
-  <main id="product-detail"></main>
+  <nav class="navigation" id="main-nav"> <!--Thanh NAV-->
+    <div class="nav-wrapper">
+      <!--Icon Bên trái -->
+      <ul class="nav-left">
+        <li class="list active">
+          <a href="/trangchu/index.html">
+            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+            <span class="text">Trang Chủ</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="/sanpham/sanpham.html">
+            <span class="icon"><ion-icon name="leaf-outline"></ion-icon></span>
+            <span class="text">Sản Phẩm</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="/gioithieu/gioithieu.html">
+            <span class="icon"><ion-icon name="information-circle-outline"></ion-icon></span>
+            <span class="text">Giới Thiệu</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="/tintuc/tintuc.html">
+            <span class="icon"><ion-icon name="newspaper-outline"></ion-icon></span>
+            <span class="text">Tin Tức</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="/huongdan/huongdan.html">
+            <span class="icon"><ion-icon name="book-outline"></ion-icon></span>
+            <span class="text">Hướng Dẫn</span>
+          </a>
+        </li>
+        <div class="login-dropdown" id="login-dropdown">
+              <a href="/dangky_dangnhap/dangnhap.html">Đăng Nhập</a>
+              <a href="/dangky_dangnhap/dangky.html">Đăng Ký</a>
+        </div>
+      </ul>
+ <div class="green-bar"></div>
+      <!-- Ảnh logo ở giữa -->
+      <div class="nav-logo">
+        <a href="/trangchu/index.html">
+        <img src="../images/Head.jpg" alt="Logo" />
+        </a>
+      </div>
 
-  <!-- Thay vì viết script ở đây -->
-  <script src="/sanpham/spchitiet.js"></script>
+      <!--Icon Bên phải -->
+      <ul class="nav-right">
+        <li class="list right-action">
+          <a href="/giohang/giohang.html">
+            <span class="icon"><ion-icon name="cart-outline"></ion-icon></span>
+            <span class="text">Giỏ Hàng</span>
+          </a> 
+        </li>
+         <li class="list right-action">
+  <div class="login-container">
+    <div class="login-trigger">
+      <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+      <span class="text">Đăng Nhập</span>
+    </div>
+    <div class="login-dropdown" id="login-dropdown">
+      <a href="/dangky_dangnhap/dangnhap.html">Đăng Nhập</a>
+      <a href="/dangky_dangnhap/dangky.html">Đăng Ký</a>
+    </div>
+  </div>
+</li>
+      </ul>
+
+    <!-- Thanh chỉ mục -->
+    <div class="indicator"></div>
+  </nav>
+  <!-- JS -->
+  <script defer src="/mainfont/main.js"></script>
+
+  <!--Phần code của từng trang-->
+  <h1 class="product_title">Bình Mini Cube 12x12</h1>
+
+<p class="product-code">Mã sản phẩm: <strong>(Đang cập nhật...)</strong></p>
+<p class="product-rating">★★★★★ Viết đánh giá của bạn</p>
+ <hr>
+<div class="product-main">
+  <div class="product-images">
+    <img src="./image_sanpham/Bình Mini Cube 12x12/1.jpg" alt="Terrarium chính" class="product-images-main">
+    <div class="product-thumbnails">
+      <img src="./image_sanpham/Bình Mini Cube 12x12/2.jpg" alt="Ảnh phụ 1" class="product-thumb">
+      <img src="./image_sanpham/Bình Mini Cube 12x12/3.jpg" alt="Ảnh phụ 2" class="product-thumb">
+    </div>
+  </div>
+ 
+  <div class="product-info-box">
+    <p class="product-price"><span class="current-price">157.000đ</span></p>
+    <p class="old-price">Giá thị trường: <del>200.000đ</del></p>
+    <p class="discount">Tiết kiệm: 20000đ</p>
+    <p class="product-status">Tình trạng: <span class="in-stock">Còn hàng</span></p>
+
+    <div class="product-option">
+  <p>Đèn</p>
+  <div class="swatch">
+    <div class="swatch-element">
+      <input type="radio" id="den-co" name="den" checked hidden>
+      <label for="den-co">CÓ ĐÈN</label>
+    </div>
+    <div class="swatch-element">
+      <input type="radio" id="den-khong" name="den" hidden>
+      <label for="den-khong">KHÔNG ĐÈN</label>
+    </div>
+  </div>
+</div>
+
+
+
+    <div class="product-quantity">
+      <button class="btn-qty">-</button>
+      <input type="text" value="1" class="qty-input">
+      <button class="btn-qty">+</button>
+    </div>
+
+    <button class="btn-buy">MUA NGAY</button>
+
+    <p class="hotline">Gọi để được tư vấn: <strong>0373979656</strong></p>
+    <p class="payment-method">Chấp nhận thanh toán bằng: <img src="./img/visa.png"> <img src="./img/paypal.png"></p>
+  </div>
+
+  <div class="sidebar-widget">
+    <h3>Hướng dẫn chăm sóc cây</h3>
+    <ul>
+      <li><a href="#">CÁCH CHĂM SÓC CÂY CHO NGƯỜI MỚI SETUP</a></li>
+
+      <li><a href="#">TIN TỨC MỚI TERRARIUMS</a></li>
+      <li><a href="#">MỘT SỐ SẢN PHẨM BẠN CÓ THỂ QUAN TÂM</a></li>
+    </ul>
+  </div>
+</div>
+ 
+
+<hr>
+
+<!-- MÔ TẢ SẢN PHẨM -->
+<div class="product-description">
+  <h2>MÔ TẢ</h2>
+  <p><strong>Concept:</strong> Emerald Dreamscape</p>
+  <p><strong>Loại bình:</strong> Bình Terrarium hình hộp đứng – viền kính trong suốt, thiết kế hiện đại</p>
+  <p><strong>Chất liệu:</strong> Thuỷ tinh dày 3mm, viền silicon độ đàn hồi cao, được làm thủ công tỉ mỉ, đảm bảo độ bền và độ trong suốt thẩm mỹ.</p>
+  <p><strong>Kích thước bình (Dài × Rộng × Cao):</strong> <br> <span style="font-size: 18px;">12 × 8 × 16 cm</span></p>
+
+  <p><strong>Thực vật bên trong:</strong></p>
+  <ul>
+    <li>Rêu xanh tươi bản địa (4–10 loại tùy mùa)</li>
+    <li>Dương xỉ lá me, cỏ trang trí</li>
+    <li>Gỗ mục tạo hiệu ứng cổ điển</li>
+    <li>*Giá chưa bao gồm mô hình động vật*</li>
+  </ul>
+
+  <p><strong>Phụ kiện kèm theo:</strong> Bình xịt chống nấm mốc, hướng dẫn chăm sóc</p>
+
+  <p><strong>Sản phẩm được thiết kế:</strong> Trang trí bàn làm việc, phòng ngủ, kệ sách, hoặc làm quà tặng sinh nhật, tân gia,...</p>
+
+  <p><strong>Về sản phẩm:</strong> “Một lần chạm vào vĩnh yên.”<br>
+  Tông màu lạnh, rêu dày và đá cổ tạo cảm giác thiêng liêng – như một khu rừng tĩnh lặng riêng của bạn.</p>
+
+  <p><strong>Hướng dẫn chăm sóc:</strong></p>
+  <ul>
+    <li>Nhiệt độ: 18 – 32°C</li>
+    <li>Tưới nước 3–4 ngày/lần trong 3 tuần đầu. Sau đó, chỉ tưới khi thấy bình khô.</li>
+    <li>Không để nắng trực tiếp. Có thể dùng đèn LED 3–8 tiếng/ngày.</li>
+    <li>Luôn đóng nắp bình để giữ ẩm.</li>
+  </ul>
+
+  <p class="thank-you">Thuận Phát Garden xin chân thành cảm ơn Quý Khách!</p>
+</div>
+
 </body>
+
+<!--Footer-->
+<footer class="site-footer">
+  <div class="footer-container">
+    
+    <!-- Cột 1: Giới thiệu -->
+    <div class="footer-column">
+      <h3>Về Chúng Tôi</h3>
+      <p>Thuận Phát G Garden chuyên cung cấp các loại terrarium độc đáo, mang thiên nhiên đến gần hơn với bạn.</p>
+      <p>• Vườn nhiệt đới cây và rêu trong bể kính </p>
+      <p>• Trung thực với khách hàng - Sáng tạo với nghệ thuật</p>
+    </div>
+
+    <!-- Cột 2: Liên kết nhanh -->
+    <div class="footer-column">
+      <h3>Liên Kết Nhanh</h3>
+      <ul>
+        <li><a href="/trangchu/index.html">Trang Chủ</a></li>
+        <li><a href="/sanpham/sanpham.html">Sản Phẩm</a></li>
+        <li><a href="/gioithieu/gioithieu.html">Giới Thiệu</a></li>
+        <li><a href="/huongdan/huongdan.html">Hướng Dẫn</a></li>
+        <li><a href="/lienhe/lienhe.html">Liên Hệ</a></li>
+      </ul>
+    </div>
+
+    <!-- Cột 3: Liên hệ -->
+    <div class="footer-column">
+      <h3>Liên Hệ</h3>
+      <p><ion-icon name="call-outline"></ion-icon> 083 977 8271</p>
+      <p><ion-icon name="mail-outline"></ion-icon> thuanphatggarden@gmail.com</p>
+      <p><ion-icon name="location-outline"></ion-icon> Quán nước HOA YÊN, 131 đường Lý Tự Trọng, Cần Thơ.</p>
+      <p><ion-icon name="location-outline"></ion-icon>  Ngọc Trương Coffee, 372B Đ. Nguyễn Văn Cừ, Phường An Khánh, Ninh Kiều, Cần Thơ.</p>
+      <p><ion-icon name="location-outline"></ion-icon> Tổ Của Yến Coffee, số 13, đường Trần Ngọc Quế, P Xuân Khánh, Q Ninh Kiều, TP Cần Thơ.</p>
+    </div>
+
+    <!-- Cột 4: Mạng xã hội -->
+    <div class="footer-column">
+      <h3>Theo Dõi Chúng Tôi</h3>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/thuanphatggarden" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
+        <a href="https://www.youtube.com/@anhshopcantho/featured" target="_blank"><ion-icon name="logo-youtube"></ion-icon></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; Bản quyền thuộc về Thuận Phát G Garden.
+  </div>
+
+</footer>
 </html>

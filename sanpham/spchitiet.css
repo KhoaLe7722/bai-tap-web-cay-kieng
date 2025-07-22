@@ -192,7 +192,8 @@ body {
     padding-bottom: 30px; 
 }
 .btn-buy {
-  margin-top: 10px;
+  display: inline-block; 
+  margin-top: 16px;
   padding: 12px 20px;
   background: #94c947;
   border: none;
@@ -200,10 +201,14 @@ body {
   font-size: 16px;
   border-radius: 6px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .btn-buy:hover {
   background: #7db434;
+}
+.hotline{
+  margin-top: 10px;
 }
 .sidebar-widget{
     background-color: #e7f8e5;

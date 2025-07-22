@@ -148,7 +148,8 @@
         <button class="btn-qty">+</button>
       </div>
 
-      <button class="btn-buy">MUA NGAY</button>
+      <button id="buy-now" class="btn-buy">MUA NGAY</button>
+
       <p class="hotline">Gọi để được tư vấn: <strong>0945720038</strong></p>
       
     </div>
@@ -636,6 +637,27 @@ if (product.id === 8) {
 
     // Gọi lần đầu
     updatePrice();
+    
+      // Tách phần này ra khỏi khối if(product) {...}
+
+// Thêm sự kiện khi bấm "MUA NGAY"
+document.getElementById("buy-now").addEventListener("click", () => {
+  const quantity = parseInt(quantityInput.value) || 1;
+  const isLed = (product.id !== 8) && radioCoDen.checked;
+  const unitPrice = basePrice + (isLed ? ledPrice : 0);
+
+addToCart({
+  id: product.id,
+  name: product.name + (isLed ? " (Có đèn)" : " (Không đèn)"),
+  price: unitPrice,
+  quantity: quantity,
+  image: product.imageMain // sửa ./ hoặc / thành /
+});
+
+
+});
+
+
 
   } else {
     document.querySelector(".container").innerHTML = "<p>Không tìm thấy sản phẩm.</p>";
@@ -658,7 +680,8 @@ if (product.id === 8) {
     }
   });
 </script>
-
+  <script src = "/giohang/giohang.js"></script>
+  
 </body>
 
 <!--Footer-->
@@ -710,4 +733,5 @@ if (product.id === 8) {
   </div>
 
 </footer>
+
 </html>

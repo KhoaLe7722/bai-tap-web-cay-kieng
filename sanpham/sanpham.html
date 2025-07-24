@@ -65,7 +65,7 @@
       <!--Icon Bên phải -->
       <ul class="nav-right">
         <li class="list right-action">
-          <a href="#" id="cart-toggle">
+          <a href="/giohang/giohang.html" id="cart-toggle">
             <span class="icon"><ion-icon name="cart-outline"></ion-icon></span>
             <span class="text">Giỏ Hàng</span>
           </a> 
@@ -89,69 +89,7 @@
   </nav>
   <!-- JS -->
   <script defer src="/mainfont/main.js"></script>
-
- <!-- Nhúng giỏ hàng -->
-<div id="giohang-container"></div>
-
-<script>
-  // Load CSS giỏ hàng
-  const link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = '/giohang/giohang.css';
-  document.head.appendChild(link);
-
-  // Tải HTML popup giỏ hàng
-  fetch('/giohang/giohang.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('giohang-container').innerHTML = html;
-
-      // Tải và gắn JS xử lý giỏ hàng
-      const script = document.createElement('script');
-      script.src = '/giohang/giohang.js';
-      script.onload = () => {
-        const cartToggle = document.getElementById("cart-toggle");
-        const cartPopup = document.getElementById("cart-popup"); // 👈 BỔ SUNG DÒNG NÀY
-
-        const showCart = () => {
-          if (cartPopup) {
-            cartPopup.style.display = "block";
-          }
-        };
-
-        const hideCart = () => {
-          if (cartPopup) {
-            cartPopup.style.display = "none";
-          }
-        };
-
-        if (cartToggle) {
-          let hoverTimeout;
-
-          cartToggle.addEventListener("mouseenter", () => {
-            clearTimeout(hoverTimeout);
-            showCart();
-          });
-
-          cartToggle.addEventListener("mouseleave", () => {
-            hoverTimeout = setTimeout(hideCart, 200);
-          });
-
-          if (cartPopup) {
-            cartPopup.addEventListener("mouseenter", () => {
-              clearTimeout(hoverTimeout);
-            });
-
-            cartPopup.addEventListener("mouseleave", () => {
-              hideCart();
-            });
-          }
-        }
-      };
-
-      document.body.appendChild(script);
-    });
-</script>
+  
  <!--<section class="bread-crumb">
     <div class="container">
       <div class="nd-main-title-breadcrumb text-center">Tất cả sản phẩm</div>

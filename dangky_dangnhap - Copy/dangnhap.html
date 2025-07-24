@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Đăng nhập</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"/>
+        <link rel="stylesheet" href="./dangky_dangnhap.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    </head>
+
+    <body>
+        <header>
+
+        </header>
+
+        <main class="body__main"> 
+            <div class="modal">
+                <div class="modal__overlay"></div>
+                <div class="modal__body">
+                    <!-- Login form -->
+                    <div class="auth-form">
+                        <div class="auth-form__container">
+                            <div class="auth-form__header">
+                                <h3 class="auth-form__heading">Đăng nhập</h3>
+                                <a href="dangky.html" class="auth-form__switch-btn">Đăng ký</a>
+                            </div>
+
+                            <form id="loginForm">
+                                <div class="auth-form__form">
+                                    <div class="auth-form__group">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input 
+                                            id="email"
+                                            name="email"
+                                            type="text"
+                                            class="auth-form__input" 
+                                            placeholder="Nhập email của bạn"
+                                            required
+                                        />
+                                        <small id="feedback-email" class="form-message"></small>
+                                    </div>
+
+                                    <div class="auth-form__group">
+                                        <label for="password" class="form-label">Mật khẩu</label>
+                                        <input 
+                                            id="password"
+                                            name="password" 
+                                            type="password"
+                                            class="auth-form__input" 
+                                            placeholder="Nhập mật khẩu" 
+                                            required
+                                        />
+                                        <small id="feedback-password" class="form-message"></small>
+                                    </div>
+
+                                    <div class="checkbox-container">
+                                        <input type="checkbox" id="rememberMe" />
+                                        <label for="rememberMe">Ghi nhớ đăng nhập</label>
+                                    </div>
+                                </div>
+
+                                <div class="auth-form__aside">
+                                    <div class="auth-form__help">
+                                        <a href="#" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
+                                        <span class="auth-form__help-separate"></span>
+                                        <a href="#" class="auth-form__help-link">Cần trợ giúp?</a>
+                                    </div>
+                                </div>
+
+                                <div class="auth-form__controls">
+                                    <a href="trangchu.html" class="btn btn--normal auth-form__controls-back">TRỞ LẠI</a>
+                                    <button type="submit" class="btn btn--primary">ĐĂNG NHẬP</button>
+                                </div>
+
+                                <div class="auth-form__socials">
+                                    <a href="https://facebook.com" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                                        <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+                                        <span class="auth-form__socials-title">Đăng nhập với Facebook</span>
+                                    </a>
+                                    <a href="https://accounts.google.com/" class="auth-form__socials--google btn btn--size-s btn--with-icon">
+                                        <img src="https://developers.google.com/identity/images/g-logo.png" 
+                                            alt="Google logo" 
+                                            class="auth-form__socials-icon auth-form__google-img"/>
+                                        <span class="auth-form__socials-title">Đăng nhập với Google</span>
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </main>
+
+        <footer class="body__footer">
+            
+
+        </footer>
+
+    </body>
+
+    <script>
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+
+        window.onload = function () {
+            document
+                .getElementById("loginForm")
+                .addEventListener("submit", function (event) {
+                    event.preventDefault();
+
+                    const emailValue = email.value.trim();
+                    const passwordValue = password.value.trim();
+
+                    const user_record = JSON.parse(localStorage.getItem("users")) || [];
+
+                    const foundUser = user_record.find(
+                        user => user.email === emailValue && user.password === passwordValue
+                    );
+
+                    if (foundUser) {
+                        alert("Đăng nhập thành công!");
+                        if (document.getElementById("rememberMe").checked) {
+                            localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
+                        }
+                        window.location.href = "../mainfont/trangchu.html";
+                    } else {
+                        alert("❌ Email hoặc mật khẩu không đúng!");
+                    }
+                });
+        };
+    </script>
+
+</html>

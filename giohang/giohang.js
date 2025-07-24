@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <td>
           <div style="display: flex; gap: 10px; align-items: center;">
             <img src="${item.image}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px;">
+
             <div>
               <div>${item.name}</div>
               <a href="#" class="remove-btn" data-name="${item.name}">Xoá</a>

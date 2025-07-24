@@ -46,7 +46,7 @@ const products = [
   {
     id: 8,
     name: "Đèn LED đế gổ",
-    price:"160,000 - 290,000",
+    price: 160000,
     image: "image_sanpham/Đèn.jpg"
   }
 ];

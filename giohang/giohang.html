@@ -9,20 +9,20 @@
   <!-- Ionicons -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <!--Fonts gg-->
+
+  <!-- Fonts Google -->
   <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand&display=swap" rel="stylesheet">
-
 
   <!-- CSS -->
   <link rel="stylesheet" href="/mainfont/main.css" />
   <link rel="stylesheet" href="/giohang/giohangchitiet.css">
 </head>
 <body>
-  <nav class="navigation" id="main-nav"> <!--Thanh NAV-->
+  <nav class="navigation" id="main-nav">
     <div class="nav-wrapper">
-      <!--Icon Bên trái -->
+      <!-- Icon bên trái -->
       <ul class="nav-left">
         <li class="list active">
           <a href="/trangchu/index.html">
@@ -55,19 +55,21 @@
           </a>
         </li>
         <div class="login-dropdown" id="login-dropdown">
-              <a href="/dangky_dangnhap/dangnhap.html">Đăng Nhập</a>
-              <a href="/dangky_dangnhap/dangky.html">Đăng Ký</a>
+          <a href="/dangky_dangnhap/dangnhap.html">Đăng Nhập</a>
+          <a href="/dangky_dangnhap/dangky.html">Đăng Ký</a>
         </div>
       </ul>
- <div class="green-bar"></div>
-      <!-- Ảnh logo ở giữa -->
+
+      <div class="green-bar"></div>
+
+      <!-- Logo ở giữa -->
       <div class="nav-logo">
         <a href="/trangchu/index.html">
-        <img src="../images/Head.jpg" alt="Logo" />
+          <img src="../images/Head.jpg" alt="Logo" />
         </a>
       </div>
 
-      <!--Icon Bên phải -->
+      <!-- Icon bên phải -->
       <ul class="nav-right">
         <li class="list right-action">
           <a href="/giohang/giohang.html">
@@ -75,67 +77,56 @@
             <span class="text">Giỏ Hàng</span>
           </a> 
         </li>
-         <li class="list right-action">
-  <div class="login-container">
-    <div class="login-trigger">
-      <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-      <span class="text">Đăng Nhập</span>
-    </div>
-    <div class="login-dropdown" id="login-dropdown">
-      <a href="/dangky_dangnhap/dangnhap.html">Đăng Nhập</a>
-      <a href="/dangky_dangnhap/dangky.html">Đăng Ký</a>
-    </div>
-  </div>
-</li>
+        <li class="list right-action">
+          <div class="login-container">
+            <div class="login-trigger">
+              <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+              <span class="text">Đăng Nhập</span>
+            </div>
+            <div class="login-dropdown" id="login-dropdown">
+              <a href="/dangky_dangnhap/dangnhap.html">Đăng Nhập</a>
+              <a href="/dangky_dangnhap/dangky.html">Đăng Ký</a>
+            </div>
+          </div>
+        </li>
       </ul>
 
-    <!-- Thanh chỉ mục -->
-    <div class="indicator"></div>
+      <!-- Thanh chỉ mục -->
+      <div class="indicator"></div>
+    </div>
   </nav>
-  <!-- JS -->
-  <script defer src="/mainfont/main.js"></script>
 
+  <!-- Phần code của từng trang -->
+  <div class="cart-popup" id="cart-popup">
+    <h3>Giỏ hàng của bạn</h3>
 
-  <!--Phần code của từng trang-->
-        
-      <div class="cart-popup" id="cart-popup">
-      <h3>Giỏ hàng của bạn</h3>
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Thông tin sản phẩm</th>
+          <th>Đơn giá</th>
+          <th>Số lượng</th>
+          <th>Thành tiền</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items">
+        <!-- Các dòng sản phẩm sẽ được thêm bằng JavaScript -->
+      </tbody>
+    </table>
 
-
-      <table class = "cart-table">
-        <thead>
-            <tr>
-                <th>Thông tin sản phẩm</th>
-                <th>Đơn giá</th>
-                <th>Số lượng</th>
-                <th>Thành tiền</th>
-            </tr>
-        </thead>
-        <tbody id = "cart-items">
-
-        </tbody>
-      </table>
-
-
-
-      <div class="cart-total">
-        Tổng tiền: <span id="cart-total">0đ</span>
-      </div>
-      <div class="cart-actions">
-        <a href="/thanhtoan/thanhtoan.html">
-        <button class = "checkout-btn">Thanh Toán</button>
-        </a>
-      </div>
+    <div class="cart-total">
+      Tổng tiền: <span id="cart-total">0đ</span>
     </div>
 
-<script defer src="/giohang/giohang.js"></script>
+    <div class="cart-actions">
+      <a href="/thanhtoan/thanhtoan.html">
+        <button class="checkout-btn">Thanh Toán</button>
+      </a>
+    </div>
+  </div>
 
-
-
-  
-
+  <!-- JS -->
+  <script defer src="/mainfont/main.js"></script>
+  <script defer src="/giohang/giohang.js"></script>
 </body>
-
-
-
 </html>

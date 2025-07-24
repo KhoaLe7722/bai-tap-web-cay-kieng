@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../images/avatar.png" type="image/png" />
+  <title>Terrarium Cần Thơ | Thuận Phát G Garden</title>
+  <link rel="stylesheet" href="tintuc__detail.css">
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/mainfont/main.css">
+  <link rel="stylesheet" href="detail.css">
+  <link rel="stylesheet" href="tintuc.css">
+</head>
+
+<body>
+  <nav class="navigation" id="main-nav">
+    <div class="nav-wrapper">
+      <!--Icon Bên trái -->
+      <ul class="nav-left">
+        <li class="list active">
+          <a href="/trangchu/index.html">
+            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+            <span class="text">Trang Chủ</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="/sanpham/sanpham.html">
+            <span class="icon"><ion-icon name="leaf-outline"></ion-icon></span>
+            <span class="text">Sản Phẩm</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="/gioithieu/gioithieu.html">
+            <span class="icon"><ion-icon name="information-circle-outline"></ion-icon></span>
+            <span class="text">Giới Thiệu</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="/tintuc/tintuc.html">
+            <span class="icon"><ion-icon name="newspaper-outline"></ion-icon></span>
+            <span class="text">Tin Tức</span>
+          </a>
+        </li>
+        <li class="list">
+          <a href="/huongdan/huongdan.html">
+            <span class="icon"><ion-icon name="book-outline"></ion-icon></span>
+            <span class="text">Hướng Dẫn</span>
+          </a>
+        </li>
+        <div class="login-dropdown" id="login-dropdown">
+          <a href="/dangky_dangnhap/dangnhap.html">Đăng Nhập</a>
+          <a href="/dangky_dangnhap/dangky.html">Đăng Ký</a>
+        </div>
+      </ul>
+      <div class="green-bar"></div>
+
+      <!-- Ảnh logo ở giữa -->
+      <div class="nav-logo">
+        <a href="/trangchu/index.html">
+          <img src="../images/Head.jpg" alt="Logo" />
+        </a>
+      </div>
+
+      <!--Icon Bên phải -->
+      <ul class="nav-right">
+        <li class="list right-action">
+          <a href="/giohang/giohang.html">
+            <span class="icon"><ion-icon name="cart-outline"></ion-icon></span>
+            <span class="text">Giỏ Hàng</span>
+          </a>
+        </li>
+        <li class="list right-action">
+          <div class="login-container">
+            <div class="login-trigger">
+              <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+              <span class="text">Đăng Nhập</span>
+            </div>
+            <div class="login-dropdown" id="login-dropdown">
+              <a href="/dangky_dangnhap/dangnhap.html">Đăng Nhập</a>
+              <a href="/dangky_dangnhap/dangky.html">Đăng Ký</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Thanh chỉ mục -->
+      <div class="indicator"></div>
+  </nav>
+  <!-- JS -->
+  <script defer src="/mainfont/main.js"></script>
+
+
+  <div class="page">
+    <div id="icon_box">
+       <a href="tintuc.html"> <i class="fa-solid fa-house"></i></a>
+        <a href="mailto:?subject=Check out this page&body=I thought you might find this page interesting: https://www.example.com"
+            target="_blank"><i class="fa-solid fa-envelope"></i></a>
+
+        <i id="like" class="fa-solid fa-heart"></i>
+    </div>
+    <div class="flex__container">
+      <div class="side">
+        <div class="danhmuctintuc">
+          Tin tức liên quan
+        </div>
+        <div id="tintuclienquan__container"></div>
+
+
+
+      </div>
+      <div class="main__contain" id="thechua">
+        <h1 id="title"></h1>
+        <img src="" alt="" id="img" class="imgs">
+        <p id="content" class="contents"></p>
+
+      </div>
+
+
+
+    </div>
+    <div class="comment--space">
+      <button id="btn__themmoi" class="open"><i class="fa-solid fa-comment"></i></button>
+      <div id="blcuaban">
+        <p>🌿Bình luận của bạn</p>
+      </div>
+      <form action="" id="comment__form">
+        <div class="control-input">
+          <input id="name" type="text" class="form-input" placeholder="Nhập tên của bạn.">
+          <span class="control-noti"></span>
+        </div>
+
+        <div class="control-input">
+          <textarea id="comment__content" class="form-input" placeholder="Bình luận ở đây."></textarea>
+          <span class="control-noti"></span>
+        </div>
+        <div class="control-input">
+          <button id="form_daidien"type="button" onclick="alert('Conming Soon!')">Chọn icon đại diện</button>
+          <button id="form-submit" type="submit">Bình luận</button>
+          <span id="daidien_space"></span>
+        </div>
+      </form>
+
+      <p id="notification"></p> 
+      <div class="comment--box" id="comment__box__id">
+        <div id="comment__bl__id"></div>
+        <!-- comen o day -->
+      </div>
+    </div>
+
+  </div>
+  <script src="detail.js"></script>
+  <!-- <script src="tintuc.js"> </script> -->
+</body>
+<!--Footer-->
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- Cột 1: Giới thiệu -->
+    <div class="footer-column">
+      <h3>Về Chúng Tôi</h3>
+      <p>Thuận Phát G Garden chuyên cung cấp các loại terrarium độc đáo, mang thiên nhiên đến gần hơn với bạn.</p>
+      <p>• Vườn nhiệt đới cây và rêu trong bể kính </p>
+      <p>• Trung thực với khách hàng - Sáng tạo với nghệ thuật</p>
+    </div>
+
+    <!-- Cột 2: Liên kết nhanh -->
+    <div class="footer-column">
+      <h3>Liên Kết Nhanh</h3>
+      <ul>
+        <li><a href="/trangchu/index.html">Trang Chủ</a></li>
+        <li><a href="/sanpham/sanpham.html">Sản Phẩm</a></li>
+        <li><a href="/gioithieu/gioithieu.html">Giới Thiệu</a></li>
+        <li><a href="/huongdan/huongdan.html">Hướng Dẫn</a></li>
+        <li><a href="/lienhe/lienhe.html">Liên Hệ</a></li>
+      </ul>
+    </div>
+
+    <!-- Cột 3: Liên hệ -->
+    <div class="footer-column">
+      <h3>Liên Hệ</h3>
+      <p><ion-icon name="call-outline"></ion-icon> 083 977 8271</p>
+      <p><ion-icon name="mail-outline"></ion-icon> thuanphatggarden@gmail.com</p>
+      <p><ion-icon name="location-outline"></ion-icon> Quán nước HOA YÊN, 131 đường Lý Tự Trọng, Cần Thơ.</p>
+    </div>
+
+    <!-- Cột 4: Mạng xã hội -->
+    <div class="footer-column">
+      <h3>Theo Dõi Chúng Tôi</h3>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/thuanphatggarden" target="_blank"><ion-icon
+            name="logo-facebook"></ion-icon></a>
+        <a href="https://www.youtube.com/@anhshopcantho/featured" target="_blank"><ion-icon
+            name="logo-youtube"></ion-icon></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; Bản quyền thuộc về Thuận Phát G Garden.
+  </div>
+
+</footer>
+
+</html>

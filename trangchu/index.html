@@ -70,7 +70,7 @@
       <!--Icon Bên phải -->
       <ul class="nav-right">
         <li class="list right-action">
-          <a href="#" id="cart-toggle">
+          <a href="/giohang/giohang.html" id="cart-toggle">
             <span class="icon"><ion-icon name="cart-outline"></ion-icon></span>
             <span class="text">Giỏ Hàng</span>
           </a> 
@@ -94,73 +94,6 @@
   </nav>
   <!-- JS -->
   <script defer src="/mainfont/main.js"></script>
-
- <!-- Nhúng giỏ hàng -->
-<div id="giohang-container"></div>
-
-<script>
-  // Load CSS giỏ hàng
-  const link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = '/giohang/giohang.css';
-  document.head.appendChild(link);
-
-  // Tải HTML popup giỏ hàng
-  fetch('/giohang/giohang.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('giohang-container').innerHTML = html;
-
-      // Tải và gắn JS xử lý giỏ hàng
-      const script = document.createElement('script');
-      script.src = '/giohang/giohang.js';
-      script.onload = () => {
-        const cartToggle = document.getElementById("cart-toggle");
-        const cartPopup = document.getElementById("cart-popup"); // 👈 BỔ SUNG DÒNG NÀY
-
-        const showCart = () => {
-          if (cartPopup) {
-            cartPopup.style.display = "block";
-          }
-        };
-
-        const hideCart = () => {
-          if (cartPopup) {
-            cartPopup.style.display = "none";
-          }
-        };
-
-        if (cartToggle) {
-          let hoverTimeout;
-
-          cartToggle.addEventListener("mouseenter", () => {
-            clearTimeout(hoverTimeout);
-            showCart();
-          });
-
-          cartToggle.addEventListener("mouseleave", () => {
-            hoverTimeout = setTimeout(hideCart, 200);
-          });
-
-          if (cartPopup) {
-            cartPopup.addEventListener("mouseenter", () => {
-              clearTimeout(hoverTimeout);
-            });
-
-            cartPopup.addEventListener("mouseleave", () => {
-              hideCart();
-            });
-          }
-        }
-      };
-
-      document.body.appendChild(script);
-    });
-</script>
-
-
-
-
 <!--Phần code của từng trang-->
 <div class="slider">
   <div class="slides">
@@ -172,10 +105,18 @@
     <a href ="/sanpham/sanpham.html">
       <img src="/images/trangchu/TERRAIUM2.png" alt="Ảnh 2" />
     </a>
-    <img src="/images/trangchu/TERRAIUM3.png" alt="Ảnh 3" />
-    <img src="/images/trangchu/Terrarium – nghệ thuật xanh xóa nhòa khoảng cách thế hệ, kết nối mọi lứa tuổi bằng tình yêu thiên nhiên..png" alt="Ảnh 4" />
-    <img src="/images/trangchu/TERRAIUM 5.png" alt="Ảnh 5" />
-    <img src="/images/trangchu/Terrarium – chill có gu, sống có chất..png" alt="Ảnh 6" />
+    <a href="/tintuc/tintuc.html">
+      <img src="/images/trangchu/TERRAIUM3.png" alt="Ảnh 3" />
+    </a>
+    <a href="/tintuc/tintuc.html">
+      <img src="/images/trangchu/Terrarium – nghệ thuật xanh xóa nhòa khoảng cách thế hệ, kết nối mọi lứa tuổi bằng tình yêu thiên nhiên..png" alt="Ảnh 4" />
+    </a>
+    <a href="/huongdan/huongdan.html">
+      <img src="/images/trangchu/TERRAIUM 5.png" alt="Ảnh 5" />
+    </a>
+    <a href="/gioithieu/taisaochon.html">
+      <img src="/images/trangchu/Terrarium – chill có gu, sống có chất..png" alt="Ảnh 6" />
+    </a>
   </div>
 </div>
 <!--Thêm dấu chấm điều hướng (dots navigation)-->
@@ -194,22 +135,31 @@
   <h2>SẢN PHẨM NỔI BẬT</h2>
   <div class="product-grid">
     <div class="product-card">
+      <a href="/sanpham/spchitiet.html?id=1">
       <img src="/sanpham/image_sanpham/Bình trứng Mini/1.jpg" alt="Sản phẩm 1" />
+       </a>
       <h3>Terrarium bình trứng Mini</h3>
       <p>157.000đ</p>
+     
     </div>
     <div class="product-card">
+      <a href="/sanpham/spchitiet.html?id=2">
       <img src="/sanpham/image_sanpham/Terrarium bình trụ 14x9 (2)/2.jpg" alt="Sản phẩm 2" />
+      </a>
       <h3>Terrarium bình trụ 14x9</h3>
       <p>357.000đ</p>
     </div>
     <div class="product-card">
+      <a href="/sanpham/spchitiet.html?id=3">
       <img src="/sanpham/image_sanpham/Bình Mini Cube 12x12/1.jpg" alt="Sản phẩm 3" />
+      </a>
       <h3>Bình Mini Cube 12x12</h3>
       <p>599.000đ</p>
     </div>
     <div class="product-card">
+      <a href="/sanpham/spchitiet.html?id=4">
       <img src="/sanpham/image_sanpham/Terrarium Đa Giác 16x16x32/1.jpg" alt="Sản phẩm 4" />
+      </a>
       <h3>Terrarium Đa Giác 16x16x32</h3>
       <p>957.000đ</p>
     </div>

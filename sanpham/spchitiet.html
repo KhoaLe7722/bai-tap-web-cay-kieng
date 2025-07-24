@@ -130,7 +130,7 @@
 
       <div class="product-option">
         <p>Đèn</p>
-        <div class="swatch">
+        <div id = "den-options" class="swatch">
           <div class="swatch-element">
             <input type="radio" id="den-co" name="den" checked hidden>
             <label for="den-co">CÓ ĐÈN</label>
@@ -148,7 +148,8 @@
         <button class="btn-qty">+</button>
       </div>
 
-      <button class="btn-buy">MUA NGAY</button>
+      <button id="buy-now" class="btn-buy">MUA NGAY</button>
+
       <p class="hotline">Gọi để được tư vấn: <strong>0945720038</strong></p>
       
     </div>
@@ -590,14 +591,31 @@
 
     // ======= Hàm tính giá =======
     function updatePrice() {
-      const quantity = parseInt(quantityInput.value) || 1;
-      const isLed = radioCoDen.checked;
-      const unitPrice = basePrice + (isLed ? ledPrice : 0);
-      const totalPrice = unitPrice * quantity;
+  const quantity = parseInt(quantityInput.value) || 1;
+  const isLed = (product.id !== 8) && radioCoDen.checked;
+  const unitPrice = basePrice + (isLed ? ledPrice : 0);
+  const totalPrice = unitPrice * quantity;
+  const oldTotalPrice = product.oldPrice * quantity;
+  const saving = oldTotalPrice - totalPrice;
 
-      priceEl.innerText = totalPrice.toLocaleString() + "đ";
-      discountEl.innerText = `Tiết kiệm: ${(product.oldPrice * quantity - totalPrice).toLocaleString()}đ`;
-    }
+  priceEl.innerText = totalPrice.toLocaleString() + "đ";
+
+  // Nếu tiết kiệm dương thì hiển thị, nếu không thì ẩn
+  if (saving > 0) {
+    discountEl.innerText = `Tiết kiệm: ${saving.toLocaleString()}đ`;
+    discountEl.style.display = "block";
+  } else {
+    discountEl.style.display = "none"; // hoặc đổi thành dòng khác nếu bạn thích
+  }
+}
+
+  // Ẩn lựa chọn "có đèn / không đèn" nếu chính sản phẩm là đèn
+if (product.id === 8) {
+  const denOptions = document.getElementById("den-options");
+  if (denOptions) {
+    denOptions.style.display = "none";
+  }
+}
 
     // ======= Sự kiện cho đèn =======
     radioCoDen.addEventListener("change", updatePrice);
@@ -619,6 +637,27 @@
 
     // Gọi lần đầu
     updatePrice();
+    
+      // Tách phần này ra khỏi khối if(product) {...}
+
+// Thêm sự kiện khi bấm "MUA NGAY"
+document.getElementById("buy-now").addEventListener("click", () => {
+  const quantity = parseInt(quantityInput.value) || 1;
+  const isLed = (product.id !== 8) && radioCoDen.checked;
+  const unitPrice = basePrice + (isLed ? ledPrice : 0);
+
+addToCart({
+  id: product.id,
+  name: product.name + (isLed ? " (Có đèn)" : " (Không đèn)"),
+  price: unitPrice,
+  quantity: quantity,
+  image: product.imageMain // sửa ./ hoặc / thành /
+});
+
+
+});
+
+
 
   } else {
     document.querySelector(".container").innerHTML = "<p>Không tìm thấy sản phẩm.</p>";
@@ -641,7 +680,8 @@
     }
   });
 </script>
-
+  <script src = "/giohang/giohang.js"></script>
+  
 </body>
 
 <!--Footer-->
@@ -693,4 +733,5 @@
   </div>
 
 </footer>
+
 </html>
